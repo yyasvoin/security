@@ -1,0 +1,9 @@
+* text=auto
+
+*.js text
+*.json text
+*.pug text
+*.md text
+.gitignore text
+.editorconfig text
+LICENSE text

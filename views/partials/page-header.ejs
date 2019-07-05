@@ -1,0 +1,54 @@
+<header class="navbar justify-content-between">
+  <nav>
+    <ul class="navbar-nav bd-navbar-nav">
+      <%-
+        include('nav-item', {
+          id: 'home',
+          href: '/',
+          text: 'Home',
+        });
+      %>
+
+      <%-
+        include('nav-item', {
+          id: 'secrets',
+          href: '/secrets',
+          text: 'Secrets',
+        });
+      %>
+    </ul>
+  </nav>
+
+  <% if (username) { %>
+    <div class="navbar-authenticated">
+      <p class="navbar-greeting">
+        Welcome,
+        <span class="navbar-greeting-username"><%= username %></span>
+      </p>
+
+      <a class="btn btn-sm btn-warning" href="/logout">
+        Logout
+      </a>
+    </div>
+  <% } else { %>
+    <nav>
+      <ul class="navbar-nav bd-navbar-nab">
+        <%-
+          include('nav-item', {
+            id: 'register',
+            href: '/register',
+            text: 'Register',
+          });
+        %>
+
+        <%-
+          include('nav-item', {
+            id: 'login',
+            href: '/login',
+            text: 'Login',
+          });
+        %>
+      </ul>
+    </nav>
+  <% } %>
+</header>
